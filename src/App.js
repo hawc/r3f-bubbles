@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
-import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
-import { Text, preloadFont } from 'troika-three-text';
+import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
+// import { Text, preloadFont } from 'troika-three-text';
 import fonts from './fonts';
 
 extend({ Text });
@@ -90,6 +90,15 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
+      <Text
+        position-z={-18}
+        {...opts}
+        font={fonts[opts.font]}
+        anchorX="center"
+        anchorY="middle"
+      >
+        test text
+      </Text>
     </>
   )
 }
@@ -103,15 +112,6 @@ export default function App() {
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
-      <text
-        position-z={-18}
-        {...opts}
-        text={text}
-        font={fonts[opts.font]}
-        anchorX="center"
-        anchorY="middle"
-        >
-      </text>
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
