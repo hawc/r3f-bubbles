@@ -83,6 +83,14 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
+      <text
+        text={text}
+        font={fonts['Roboto Slab']}
+        fontSize={34}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="top">
+      </text>
     </>
   )
 }
@@ -101,12 +109,6 @@ export default function App() {
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />
-      <text
-        text={text}
-        font={fonts['Roboto Slab']}
-        anchorX="center"
-        anchorY="top">
-      </text>
         </EffectComposer>
       </Suspense>
     </Canvas>
