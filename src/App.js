@@ -10,6 +10,14 @@ extend({ Text });
 
 const text = "test text";
 
+const opts = {
+  font: "Roboto Slab",
+  fontSize: 6,
+  color: "#f60080",
+  maxWidth: 300,
+  materialType: "MeshPhongMaterial",
+};
+
 function MainSphere({ material }) {
   const main = useRef()
   // main sphere rotates following the mouse position
@@ -83,16 +91,20 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
+      <text
+        position-z={-18}
+        {...opts}
+        text={text}
+        font={fonts[opts.font]}
+        anchorX="center"
+        anchorY="middle">
+        <meshPhongMaterial
+          attach="material"
+          color="#0000ff"
+          />
+      </text>
     </>
   )
-}
-
-const opts = {
-  font: "Roboto Slab",
-  fontSize: 6,
-  color: "#f60080",
-  maxWidth: 300,
-  materialType: "MeshPhongMaterial",
 }
 
 export default function App() {
@@ -109,18 +121,6 @@ export default function App() {
           <Vignette darkness={0.5} />
         </EffectComposer>
       </Suspense>
-      <text
-        position-z={-18}
-        {...opts}
-        text={text}
-        font={fonts[opts.font]}
-        anchorX="center"
-        anchorY="middle">
-        <meshPhongMaterial
-          attach="material"
-          color="#0000ff"
-          />
-      </text>
     </Canvas>
   )
 }
