@@ -110,7 +110,7 @@ export default function App() {
         font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
-        material={material}>
+        {/* material={material} */}>
       </text>
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
