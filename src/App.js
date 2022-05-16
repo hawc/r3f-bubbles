@@ -94,13 +94,13 @@ export default function App() {
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
-      <Suspense fallback={<Html center>Loading.</Html>}>
       <text
         text={text}
         font={fonts['Roboto Slab']}
         anchorX="center"
-        anchorY="middle"
-        />
+        anchorY="middle">
+      </text>
+      <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
