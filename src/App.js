@@ -90,14 +90,6 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
-      <text
-        position-z={-18}
-        {...opts}
-        text={text}
-        font={fonts[opts.font]}
-        anchorX="center"
-        anchorY="middle">
-      </text>
     </>
   )
 }
@@ -111,6 +103,15 @@ export default function App() {
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
+      <text
+        position-z={-18}
+        {...opts}
+        text={text}
+        font={fonts[opts.font]}
+        anchorX="center"
+        anchorY="middle"
+        material={material}>
+      </text>
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
