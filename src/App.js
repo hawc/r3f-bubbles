@@ -2,11 +2,8 @@ import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
-import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
-import { Text } from 'troika-three-text';
+import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
-
-extend({Text});
 
 const text = "test text";
 
