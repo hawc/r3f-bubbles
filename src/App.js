@@ -89,15 +89,15 @@ function Scene() {
 
 const opts = {
   font: "Roboto Slab",
-  fontSize: 12,
-  color: "#ff0000",
+  fontSize: 6,
+  color: "#f60080",
   maxWidth: 300,
   materialType: "MeshPhongMaterial",
 }
 
 export default function App() {
   return (
-    <Canvas style={{position:"fixed",top:0,left:0,width:"100%",height:"100%"}}>
+    <Canvas {/*style={{position:"fixed",top:0,left:0,width:"100%",height:"100%"}}*/}>
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
