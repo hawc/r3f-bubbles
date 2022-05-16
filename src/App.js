@@ -90,15 +90,16 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
-      <Text
+      {material && <Text
         position-z={-18}
         {...opts}
         font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
+        material={material}
       >
         test text
-      </Text>
+      </Text>}
     </>
   )
 }
