@@ -95,7 +95,7 @@ function Scene() {
 }
 
 export default function App() {
-  return preloadFont(
+  preloadFont(
   {
     font: fonts[opts.font], 
     characters: 'abcdefghijklmnopqrstuvwxyz'
