@@ -3,7 +3,7 @@ import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
 import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
-import { Text } from 'troika-three-text';
+import { Text, preloadFont } from 'troika-three-text';
 import fonts from './fonts';
 
 extend({ Text });
@@ -95,7 +95,13 @@ function Scene() {
 }
 
 export default function App() {
-  return (
+  return preloadFont(
+  {
+    font: fonts[opts.font], 
+    characters: 'abcdefghijklmnopqrstuvwxyz'
+  },
+  () => {
+    return (
     <Canvas
       camera={{ position: [0, 0, 3] }}
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
@@ -121,4 +127,7 @@ export default function App() {
       </Suspense>
     </Canvas>
   )
+  }
+)
+
 }
