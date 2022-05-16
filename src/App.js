@@ -97,11 +97,13 @@ function Scene() {
         text={text}
         font={fonts[opts.font]}
         anchorX="center"
-        anchorY="middle">
+        anchorY="middle"
+        material={material}> {/*
         <meshPhongMaterial
           attach="material"
           color="#0000ff"
           />
+          */}
       </text>
     </>
   )
