@@ -97,7 +97,7 @@ const opts = {
 
 export default function App() {
   return (
-    <Canvas {/*style={{position:"fixed",top:0,left:0,width:"100%",height:"100%"}}*/}>
+    <Canvas>
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
@@ -110,6 +110,7 @@ export default function App() {
         </EffectComposer>
       </Suspense>
       <text
+        position-z={-18}
         {...opts}
         text={text}
         font={fonts[opts.font]}
