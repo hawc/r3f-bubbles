@@ -83,47 +83,15 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
-      <text
-        position-z={-180}
-        rotation={0}
-        text={text}
-        font={fonts['Roboto Slab']}
-        fontSize={34}
-        color="#ffffff"
-        anchorX="center"
-        anchorY="top"
-        materialType="meshPhongMaterial">
-        <meshPhongMaterial
-          attach="material"
-          color="#ffffff"
-          />
-      </text>
     </>
   )
 }
 
 export default function App() {
   return (
-    <Canvas
-    {/*
-      camera={{ position: [0, 0, 3] }}
-      gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}*/}>
-      <color attach="background" args={['#050505']} />
-      {/*
-      <fog color="#161616" attach="fog" near={8} far={30} />
-      <Suspense fallback={<Html center>Loading.</Html>}>
-        <Scene />
-        <EffectComposer>
-          <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-          <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
-          <Noise opacity={0.03} />
-          <Vignette darkness={0.5} />
-        </EffectComposer>
-      </Suspense>
-      */}
-      
+    <Canvas>
       <text
-        position-z={-180}
+        positionZ={-180}
         rotation={0}
         text={text}
         font={fonts['Roboto Slab']}
