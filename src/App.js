@@ -13,7 +13,7 @@ const text = "test text";
 const opts = {
   font: "Roboto Slab",
   fontSize: 6,
-  color: "#f60080",
+  color: "#010101",
   maxWidth: 300,
   materialType: "MeshPhongMaterial",
 };
