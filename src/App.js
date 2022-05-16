@@ -70,6 +70,7 @@ function Instances({ material }) {
 }
 
 function Scene() {
+renderer.clear();
 alert("123");
   const bumpMap = useTextureLoader('/bump.jpg')
   const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: '/cube/' })
