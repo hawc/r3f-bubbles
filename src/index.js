@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import './styles.css'
 import {preloadFont} from 'troika-three-text'
+import fonts from './fonts';
 
 const opts = {
   font: "Roboto Slab",
