@@ -98,6 +98,17 @@ const opts = {
 export default function App() {
   return (
     <Canvas style={{position:"fixed",top:0,left:0,width:"100%",height:"100%"}}>
+      <color attach="background" args={['#050505']} />
+      <fog color="#161616" attach="fog" near={8} far={30} />
+      <Suspense fallback={<Html center>Loading.</Html>}>
+        <Scene />
+        <EffectComposer>
+          <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+          <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
+          <Noise opacity={0.03} />
+          <Vignette darkness={0.5} />
+        </EffectComposer>
+      </Suspense>
       <text
         {...opts}
         text={text}
