@@ -87,19 +87,23 @@ function Scene() {
   )
 }
 
+const opts = {
+  font: "Roboto Slab",
+  fontSize: 12,
+  color: "#ff0000",
+  maxWidth: 300,
+  materialType: "MeshPhongMaterial",
+}
+
 export default function App() {
   return (
-    <Canvas>
+    <Canvas style={{position:"fixed",top:0,left:0,width:"100%",height:"100%"}}>
       <text
-        positionZ={-180}
-        rotation={0}
+        {...opts}
         text={text}
-        font={fonts['Roboto Slab']}
-        fontSize={34}
-        color="#ff0000"
+        font={fonts[opts.font]}
         anchorX="center"
-        anchorY="top"
-        materialType="meshPhongMaterial">
+        anchorY="middle">
         <meshPhongMaterial
           attach="material"
           color="#0000ff"
