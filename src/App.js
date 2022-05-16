@@ -71,8 +71,8 @@ function Scene() {
         bumpScale={0.005}
         clearcoat={1}
         clearcoatRoughness={1}
-        radius={0.1}
-        distort={1}
+        radius={1}
+        distort={0.4}
         envMap={envMap}
         bumpMap={bumpMap}
       />
