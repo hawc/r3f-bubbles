@@ -15,7 +15,6 @@ const opts = {
   fontSize: 6,
   color: "#010101",
   maxWidth: 300,
-  materialType: "MeshPhongMaterial",
 };
 
 function MainSphere({ material }) {
