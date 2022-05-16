@@ -94,12 +94,6 @@ export default function App() {
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
-      <text
-        text={text}
-        font={fonts['Roboto Slab']}
-        anchorX="center"
-        anchorY="top">
-      </text>
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
         <EffectComposer>
@@ -107,6 +101,12 @@ export default function App() {
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />
+      <text
+        text={text}
+        font={fonts['Roboto Slab']}
+        anchorX="center"
+        anchorY="top">
+      </text>
         </EffectComposer>
       </Suspense>
     </Canvas>
