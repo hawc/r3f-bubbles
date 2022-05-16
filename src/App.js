@@ -98,7 +98,7 @@ export default function App() {
         text={text}
         font={fonts['Roboto Slab']}
         anchorX="center"
-        anchorY="middle">
+        anchorY="top">
       </text>
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
