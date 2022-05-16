@@ -132,6 +132,8 @@ export default function App() {
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
+      
+      <SceneText />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene/>
         
@@ -142,7 +144,6 @@ export default function App() {
           <Vignette darkness={0.5} />
         </EffectComposer>
         
-        <SceneText />
       </Suspense>
     </Canvas>
   )
