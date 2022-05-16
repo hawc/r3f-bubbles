@@ -95,12 +95,7 @@ function Scene() {
 }
 
 export default function App() {
-    return preloadFont(
-  {
-    font: fonts[opts.font],
-    characters: 'abcdefghijklmnopqrstuvwxyz'
-  },
-  () => (
+    return (
     <Canvas
       camera={{ position: [0, 0, 3] }}
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
@@ -125,5 +120,5 @@ export default function App() {
         </EffectComposer>
       </Suspense>
     </Canvas>
-  ))
+  )
 }
