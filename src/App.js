@@ -6,8 +6,6 @@ import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDi
 // import { Text, preloadFont } from 'troika-three-text';
 import fonts from './fonts';
 
-extend({ Text });
-
 const text = "test text";
 
 const opts = {
@@ -70,8 +68,6 @@ function Instances({ material }) {
 }
 
 function Scene() {
-renderer.clear();
-alert("123");
   const bumpMap = useTextureLoader('/bump.jpg')
   const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: '/cube/' })
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
