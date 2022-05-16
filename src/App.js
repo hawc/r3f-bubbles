@@ -1,8 +1,14 @@
-import * as THREE from 'three'
-import React, { Suspense, useRef, useState } from 'react'
-import { Canvas, useFrame, useResource } from 'react-three-fiber'
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing'
-import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei'
+import * as THREE from 'three';
+import React, { Suspense, useRef, useState } from 'react';
+import { Canvas, useFrame, useResource } from 'react-three-fiber';
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
+import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
+import { Text } from 'troika-three-text';
+import fonts from './fonts';
+
+extend({ Text });
+
+const text = "test text";
 
 function MainSphere({ material }) {
   const main = useRef()
@@ -89,6 +95,12 @@ export default function App() {
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
+      <text
+        text={text}
+        font={fonts['Roboto Slab']}
+        anchorX="center"
+        anchorY="middle"
+        />
         <Scene />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
