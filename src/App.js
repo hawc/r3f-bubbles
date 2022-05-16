@@ -107,7 +107,6 @@ export default function App() {
         position-z={-18}
         {...opts}
         text={text}
-        font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
         >
