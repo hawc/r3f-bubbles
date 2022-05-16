@@ -2,9 +2,11 @@ import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
-import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
-// import { Text, preloadFont } from 'troika-three-text';
+import { Preload, Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
+import { Text } from 'troika-three-text';
 import fonts from './fonts';
+
+extend({Text});
 
 const text = "test text";
 
@@ -122,7 +124,6 @@ function SceneText() {
       >
         test text
       </Text>}
-      <Scene/>
     </>
   )
 }
@@ -135,7 +136,8 @@ export default function App() {
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
-        
+        <Preload all>
+        <Scene/>
         <SceneText />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
