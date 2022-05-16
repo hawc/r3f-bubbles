@@ -90,20 +90,15 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
-      <text
+      {/*<text
         position-z={-18}
         {...opts}
         text={text}
         font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
-        material={material}> {/*
-        <meshPhongMaterial
-          attach="material"
-          color="#0000ff"
-          />
-          */}
-      </text>
+        material={material}>
+      </text>*/}
     </>
   )
 }
