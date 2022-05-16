@@ -82,7 +82,7 @@ function Scene() {
         envMap={envMap}
         bumpMap={bumpMap}
       />
-      {material && <Instances material={material} />}
+      {/*material && <Instances material={material} />*/}
       <text
         position-z={-180}
         rotation={0}
