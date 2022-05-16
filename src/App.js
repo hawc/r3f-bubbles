@@ -95,12 +95,6 @@ function Scene() {
 }
 
 export default function App() {
-  preloadFont(
-  {
-    font: fonts[opts.font], 
-    characters: 'abcdefghijklmnopqrstuvwxyz'
-  },
-  () => {
     return (
     <Canvas
       camera={{ position: [0, 0, 3] }}
@@ -127,7 +121,4 @@ export default function App() {
       </Suspense>
     </Canvas>
   )
-  }
-)
-
 }
