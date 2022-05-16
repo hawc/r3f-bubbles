@@ -122,6 +122,7 @@ function SceneText() {
       >
         test text
       </Text>}
+      <Scene/>
     </>
   )
 }
@@ -134,7 +135,7 @@ export default function App() {
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
-        <Scene />
+        
         <SceneText />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
