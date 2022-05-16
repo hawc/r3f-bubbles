@@ -142,8 +142,8 @@ export default function App() {
           <Vignette darkness={0.5} />
         </EffectComposer>
         
-      </Suspense>
         <SceneText />
+      </Suspense>
     </Canvas>
   )
 }
