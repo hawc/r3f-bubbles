@@ -69,20 +69,6 @@ function Scene() {
   const [matRef, material] = useResource()
   return (
     <>
-      <MeshDistortMaterial
-        ref={matRef}
-        color={'#010101'}
-        roughness={0.1}
-        metalness={1}
-        bumpScale={0.005}
-        clearcoat={1}
-        clearcoatRoughness={1}
-        radius={1}
-        distort={0.4}
-        envMap={envMap}
-        bumpMap={bumpMap}
-      />
-      {material && <Instances material={material} />}
       <text
         text={text}
         font={fonts['Roboto Slab']}
