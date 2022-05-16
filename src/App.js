@@ -88,6 +88,30 @@ function Scene() {
         bumpMap={bumpMap}
       />
       {material && <Instances material={material} />}
+    </>
+  )
+}
+
+function SceneText() {
+  const bumpMap = useTextureLoader('/bump.jpg')
+  const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: '/cube/' })
+  // We use `useResource` to be able to delay rendering the spheres until the material is ready
+  const [matRef, material] = useResource()
+  return (
+    <>
+      <MeshDistortMaterial
+        ref={matRef}
+        color={'#f0f0f0'}
+        roughness={0.1}
+        metalness={1}
+        bumpScale={0.005}
+        clearcoat={1}
+        clearcoatRoughness={1}
+        radius={1}
+        distort={0.4}
+        envMap={envMap}
+        bumpMap={bumpMap}
+      />
       {material && <Text
         position-z={-18}
         {...opts}
@@ -111,6 +135,7 @@ export default function App() {
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
+        <SceneText />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
