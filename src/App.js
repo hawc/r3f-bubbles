@@ -82,7 +82,7 @@ function Scene() {
         envMap={envMap}
         bumpMap={bumpMap}
       />
-      {/*material && <Instances material={material} />*/}
+      {material && <Instances material={material} />}
       <text
         position-z={-180}
         rotation={0}
@@ -105,8 +105,9 @@ function Scene() {
 export default function App() {
   return (
     <Canvas
+    {/*
       camera={{ position: [0, 0, 3] }}
-      gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
+      gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}*/}>
       <color attach="background" args={['#050505']} />
       {/*
       <fog color="#161616" attach="fog" near={8} far={30} />
