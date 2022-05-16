@@ -136,7 +136,7 @@ export default function App() {
       <color attach="background" args={['#050505']} />
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
-        <Preload all>
+        <Preload all />
         <Scene/>
         <SceneText />
         <EffectComposer>
