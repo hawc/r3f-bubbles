@@ -108,6 +108,7 @@ export default function App() {
       camera={{ position: [0, 0, 3] }}
       gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
       <color attach="background" args={['#050505']} />
+      {/*
       <fog color="#161616" attach="fog" near={8} far={30} />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <Scene />
@@ -118,6 +119,23 @@ export default function App() {
           <Vignette darkness={0.5} />
         </EffectComposer>
       </Suspense>
+      */}
+      
+      <text
+        position-z={-180}
+        rotation={0}
+        text={text}
+        font={fonts['Roboto Slab']}
+        fontSize={34}
+        color="#ff0000"
+        anchorX="center"
+        anchorY="top"
+        materialType="meshPhongMaterial">
+        <meshPhongMaterial
+          attach="material"
+          color="#0000ff"
+          />
+      </text>
     </Canvas>
   )
 }
