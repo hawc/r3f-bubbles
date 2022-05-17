@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation, BrightnessContrast } from 'react-postprocessing';
-import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, BasicMaterial, MeshDistortMaterial } from 'drei';
+import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshBasicMaterial, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
 const text = "test text";
@@ -52,8 +52,11 @@ function SceneText() {
         anchorY="middle"
       >
         wieauchimmer
-        <BasicMaterial
+        <MeshBasicMaterial
           color="#ff0000"
+          opacity={0.5}
+          transparent={true}
+          blending={THREE.SubtractiveBlending}
           />
       </Text>
       <MainSphere/>
