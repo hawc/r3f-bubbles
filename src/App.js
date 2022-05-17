@@ -30,12 +30,15 @@ function MainSphere() {
         distort={0.4}
         opacity={0.5}
         transparent={true}
-        combine={THREE.InvertOperation}
+        blending={THREE.SubtractiveBlending}
+      />
+      {/*
+      
         blending={THREE.CustomBlending}
         blendEquation={THREE.AddEquation}
         blendSrc={THREE.SrcAlphaFactor}
         blendDst={THREE.OneMinusSrcAlphaFactor}
-      />
+      */}
   </Icosahedron>
 }
 
