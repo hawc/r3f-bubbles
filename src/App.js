@@ -55,7 +55,7 @@ export default function App() {
       camera={{ position: [0, 0, 3] }}>
       <color attach="background" args={['#050505']} />
       {/*<fog color="#161616" attach="fog" near={8} far={30} />*/}
-      
+      <ambientLight />
       <Suspense fallback={<Html center>Loading.</Html>}>
         <SceneText />
         <EffectComposer multisampling={0}>
