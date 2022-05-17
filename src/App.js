@@ -98,6 +98,7 @@ function SceneText() {
   const [matRef, material] = useResource()
   return (
     <>
+    {/*
       <MeshDistortMaterial
         ref={matRef}
         color={'#f0f0f0'}
@@ -110,8 +111,8 @@ function SceneText() {
         distort={0.4}
         envMap={envMap}
         bumpMap={bumpMap}
-      />
-      {material && <Text
+      />*/}
+      <Text
         position-z={-18}
         {...opts}
         font={fonts[opts.font]}
@@ -120,7 +121,7 @@ function SceneText() {
         material={material}
       >
         wieauchimmer
-      </Text>}
+      </Text>
     </>
   )
 }
