@@ -65,8 +65,6 @@ function SceneText() {
         clearcoatRoughness={1}
         radius={1}
         distort={0.4}
-        envMap={envMap}
-        bumpMap={bumpMap}
       />
       <Text
         position-z={-18}
