@@ -27,8 +27,6 @@ function MainSphere() {
         color="#000000"
         radius={1}
         distort={0.4}
-        opacity={0.5}
-        transparent={true}
         blending={THREE.SubtractiveBlending}
       />
       {/*
@@ -54,8 +52,6 @@ function SceneText() {
         wieauchimmer
         <meshBasicMaterial
           color="#000000"
-          opacity={0.5}
-          transparent={true}
           blending={THREE.SubtractiveBlending}
           />
       </Text>
