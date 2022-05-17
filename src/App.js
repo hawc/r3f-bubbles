@@ -6,7 +6,7 @@ import { ShaderPass } from 'postprocessing';
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
-function Blend({ref}) {
+function Blend() {
   const blendShaderMaterial = new THREE.ShaderMaterial({
 	uniforms: {
 		inputBuffer: {value: null},
@@ -35,7 +35,7 @@ function Blend({ref}) {
   });
 
   const BlendShader = new ShaderPass(blendShaderMaterial);
-  return <primitive ref={ref} object={BlendShader} dispose={null} />
+  return <primitive object={BlendShader} dispose={null} />
 }
 
 
@@ -110,7 +110,7 @@ export default function App() {
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
           <Pixelation />
-          <BlendShader />
+          <Blend />
           {/*<BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
