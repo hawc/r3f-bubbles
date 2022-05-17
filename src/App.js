@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation } from 'react-postprocessing';
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation, BrightnessContrast } from 'react-postprocessing';
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
@@ -144,6 +144,7 @@ export default function App() {
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
           <Pixelation />
+          <BrightnessContrast contrast={1} />
         </EffectComposer>
         
       </Suspense>
