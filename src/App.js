@@ -57,7 +57,7 @@ function SceneText() {
     <>
       <MeshDistortMaterial
         ref={matRef}
-        color={'#f0f0f0'}
+        color={'#ffffff'}
         roughness={0.1}
         metalness={1}
         bumpScale={0.005}
