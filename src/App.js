@@ -134,7 +134,7 @@ export default function App() {
       <fog color="#161616" attach="fog" near={8} far={30} />
       
       <Suspense fallback={<Html center>Loading.</Html>}>
-        <Scene/>
+        {/*<Scene/>*/}
         
         <SceneText />
         <EffectComposer>
