@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from 'react-postprocessing';
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation } from 'react-postprocessing';
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
@@ -10,7 +10,7 @@ const text = "test text";
 const opts = {
   font: "Roboto Slab",
   fontSize: 6,
-  color: "#010101",
+  color: "#ffffff",
   maxWidth: 300,
 };
 
@@ -142,6 +142,7 @@ export default function App() {
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />
+          <DotScreen scale={4} />
         </EffectComposer>
         
       </Suspense>
