@@ -44,7 +44,7 @@ function SceneText() {
       >
         wieauchimmer
       </Text>
-      <MainSphere/>
+      <MainSphere dispose={null}/>
     </>
   )
 }
