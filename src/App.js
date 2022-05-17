@@ -59,10 +59,10 @@ export default function App() {
       <Suspense fallback={<Html center>Loading.</Html>}>
         <SceneText />
         <EffectComposer multisampling={0}>
-          <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+          {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
-          <Vignette darkness={0.5} />
+          <Vignette darkness={0.5} />*/}
           <Pixelation />
           <BrightnessContrast contrast={1} />
         </EffectComposer>
