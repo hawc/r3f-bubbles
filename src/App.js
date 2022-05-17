@@ -28,8 +28,11 @@ function MainSphere() {
         color="#ffff80"
         radius={1}
         distort={0.4}
+        transparent={true}
         blending={THREE.CustomBlending}
         blendEquation={THREE.AddEquation}
+        blendSrc={THREE.SrcAlphaFactor}
+        blendDst={THREE.OneMinusSrcAlphaFactor}
       />
   </Icosahedron>
 }
@@ -66,7 +69,7 @@ export default function App() {
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
           <Pixelation />
-          <BrightnessContrast contrast={1} />
+          {/*<BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
       </Suspense>
