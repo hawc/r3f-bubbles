@@ -33,12 +33,12 @@ function MainSphere() {
 }
 
 function SceneText() {
-  //const childkey = Math.random();
   return (
     <>
       <Text
         position-z={-18}
         {...opts}
+        font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
       >
@@ -52,8 +52,7 @@ function SceneText() {
 export default function App() {
     return (
     <Canvas
-      camera={{ position: [0, 0, 3] }}
-      gl={{ powerPreference: 'high-performance', alpha: false, antialias: false, stencil: false, depth: false }}>
+      camera={{ position: [0, 0, 3] }}>
       <color attach="background" args={['#050505']} />
       {/*<fog color="#161616" attach="fog" near={8} far={30} />*/}
       
@@ -63,9 +62,9 @@ export default function App() {
           {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
-          <Vignette darkness={0.5} />*/}
-          {/*<Pixelation />*/}
-          {/*<BrightnessContrast contrast={1} />*/}
+          <Vignette darkness={0.5} />
+          <Pixelation />
+          <BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
       </Suspense>
