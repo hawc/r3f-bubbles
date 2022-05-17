@@ -28,7 +28,9 @@ function MainSphere() {
         color="#ffff80"
         radius={1}
         distort={0.4}
+        opacity={0.5}
         transparent={true}
+        combine={THREE.MultiplyOparation}
         blending={THREE.CustomBlending}
         blendEquation={THREE.AddEquation}
         blendSrc={THREE.SrcAlphaFactor}
