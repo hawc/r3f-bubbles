@@ -10,7 +10,6 @@ const text = "test text";
 const opts = {
   font: "Roboto Slab",
   fontSize: 6,
-  color: "#000000",
   maxWidth: 300,
 };
 
@@ -53,6 +52,9 @@ function SceneText() {
         anchorY="middle"
       >
         wieauchimmer
+        <BasicMaterial
+          color="#ff0000"
+          />
       </Text>
       <MainSphere/>
     </>
