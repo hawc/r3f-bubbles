@@ -64,8 +64,8 @@ export default function App() {
           <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
-          <Pixelation />
-          <BrightnessContrast contrast={1} />
+          {/*<Pixelation />*/}
+          {/*<BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
       </Suspense>
