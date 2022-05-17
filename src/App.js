@@ -10,7 +10,7 @@ const text = "test text";
 const opts = {
   font: "Roboto Slab",
   fontSize: 6,
-  color: "#ffffff",
+  color: "#80ffff",
   maxWidth: 300,
 };
 
@@ -25,9 +25,11 @@ function MainSphere() {
   })
   return <Icosahedron args={[1, 4]} ref={main} position={[0,0,0]}> 
       <MeshDistortMaterial
-        color="#ffffff"
+        color="#ffff80"
         radius={1}
         distort={0.4}
+        blending={THREE.CustomBlending}
+        blendEquation={THREE.AddEquation}
       />
   </Icosahedron>
 }
