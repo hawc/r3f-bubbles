@@ -85,9 +85,10 @@ function SceneText() {
       >
         wieauchimmer
         <meshBasicMaterial
-          color="#000000"
-          blending={THREE.SubtractiveBlending}
+          color="#ffffff"
           />
+          {/*
+          blending={THREE.SubtractiveBlending}*/}
       </Text>
       <MainSphere/>
     </>
