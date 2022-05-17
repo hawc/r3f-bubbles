@@ -95,7 +95,7 @@ function SceneText() {
 }
 
 export default function App() {
-    const overlayBuffer = this.overlayBuffer = new Three.WebGLRenderTarget(w, h);
+    //const overlayBuffer = this.overlayBuffer = new Three.WebGLRenderTarget(w, h);
     return (
     <Canvas
       camera={{ position: [0, 0, 3] }}>
