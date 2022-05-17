@@ -30,7 +30,7 @@ function MainSphere() {
         distort={0.4}
         opacity={0.5}
         transparent={true}
-        combine={THREE.MultiplyOparation}
+        combine={THREE.MultiplyOperation}
         blending={THREE.CustomBlending}
         blendEquation={THREE.AddEquation}
         blendSrc={THREE.SrcAlphaFactor}
