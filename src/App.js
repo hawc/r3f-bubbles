@@ -6,7 +6,8 @@ import { ShaderPass } from 'postprocessing';
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
-const blendShaderMaterial = new THREE.ShaderMaterial({
+function Blend({ref}) {
+  const blendShaderMaterial = new THREE.ShaderMaterial({
 	uniforms: {
 		inputBuffer: {value: null},
 		overlayBuffer: {value: null}
@@ -31,9 +32,11 @@ const blendShaderMaterial = new THREE.ShaderMaterial({
 			gl_FragColor = vec4(diff, 1.0);
 		}
 	`
-});
+  });
 
-const BlendShader = new ShaderPass(blendShaderMaterial);
+  const BlendShader = new ShaderPass(blendShaderMaterial);
+  return <primitive ref={ref} object={BlendShader} dispose={null} />
+}
 
 
 const text = "test text";
@@ -92,6 +95,7 @@ function SceneText() {
 }
 
 export default function App() {
+    const overlayBuffer = this.overlayBuffer = new Three.WebGLRenderTarget(w, h);
     return (
     <Canvas
       camera={{ position: [0, 0, 3] }}>
