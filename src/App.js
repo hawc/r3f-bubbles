@@ -34,7 +34,7 @@ function Scene() {
     <>
       <MeshDistortMaterial
         ref={matRef}
-        color={'#010101'}
+        color={'#ffffff'}
         roughness={0.1}
         metalness={1}
         bumpScale={0.005}
