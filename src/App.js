@@ -21,8 +21,9 @@ function MainSphere() {
     main.current.rotation.z = clock.getElapsedTime()
     main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.1)
     main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.1)
+    main.current.position = [mouse.x, mouse.y, 0];
   })
-  return <Icosahedron args={[1, 4]} ref={main} position={[mouse.x, mouse.y, 0]}> 
+  return <Icosahedron args={[1, 4]} ref={main} position={[0,0,0]}> 
       <MeshDistortMaterial
         color={'#ffffff'}
         radius={1}
