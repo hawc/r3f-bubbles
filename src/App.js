@@ -40,7 +40,6 @@ function SceneText() {
         font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
-        material={material}
       >
         wieauchimmer
       </Text>
@@ -58,8 +57,6 @@ export default function App() {
       {/*<fog color="#161616" attach="fog" near={8} far={30} />*/}
       
       <Suspense fallback={<Html center>Loading.</Html>}>
-        {/*<Scene/>*/}
-        
         <SceneText />
         <EffectComposer>
           {/*<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
