@@ -5,6 +5,36 @@ import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixela
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
+const blendShaderMaterial = new ShaderMaterial({
+	uniforms: {
+		inputBuffer: {value: null},
+		overlayBuffer: {value: null}
+	},
+
+	vertexShader: `
+		varying vec2 vUv;
+		void main() {
+			vUv = uv;
+			gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+		}
+	`,
+
+	fragmentShader: `
+		uniform sampler2D inputBuffer;
+		uniform sampler2D overlayBuffer;
+		varying vec2 vUv;
+		void main() {
+			vec4 texel1 = texture2D(inputBuffer, vUv);
+			vec4 texel2 = texture2D(overlayBuffer, vUv);
+			vec3 diff = abs(texel1.rgb - texel2.rgb);
+			gl_FragColor = vec4(diff, 1.0);
+		}
+	`
+});
+
+const BlendShader = new ShaderPass(blendShaderMaterial);
+
+
 const text = "test text";
 
 const opts = {
@@ -75,6 +105,7 @@ export default function App() {
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
           <Pixelation />
+          <BlendShader />
           {/*<BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
