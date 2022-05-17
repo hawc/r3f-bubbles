@@ -139,9 +139,9 @@ export default function App() {
         <SceneText />
         <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-          <Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
+          {/*<Bloom luminanceSmoothing={0.1} luminanceThreshold={0.2} />
           <Noise opacity={0.03} />
-          <Vignette darkness={0.5} />
+          <Vignette darkness={0.5} />*/}
           <DotScreen scale={4} />
         </EffectComposer>
         
