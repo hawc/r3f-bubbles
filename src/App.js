@@ -25,7 +25,7 @@ function MainSphere() {
   })
   return <Icosahedron args={[1, 4]} ref={main} position={[0,0,0]}> 
       <MeshDistortMaterial
-        color={'#ffffff'}
+        color="#ffffff"
         radius={1}
         distort={0.4}
       />
@@ -33,12 +33,12 @@ function MainSphere() {
 }
 
 function SceneText() {
+  //const childkey = Math.random();
   return (
     <>
       <Text
         position-z={-18}
         {...opts}
-        font={fonts[opts.font]}
         anchorX="center"
         anchorY="middle"
       >
