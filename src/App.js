@@ -14,7 +14,7 @@ const opts = {
   maxWidth: 300,
 };
 
-function MainSphere({ material }) {
+function MainSphere() {
   const main = useRef()
   // main sphere rotates following the mouse position
   useFrame(({ clock, mouse }) => {
@@ -22,50 +22,18 @@ function MainSphere({ material }) {
     main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.1)
     main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.1)
   })
-  return <Icosahedron args={[1, 4]} ref={main} material={material} position={[0, 0, 0]} />
-}
-
-function Scene() {
-  const bumpMap = useTextureLoader('/bump.jpg')
-  const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: '/cube/' })
-  // We use `useResource` to be able to delay rendering the spheres until the material is ready
-  const [matRef, material] = useResource()
-  return (
-    <>
+  return <Icosahedron args={[1, 4]} ref={main} position={[0, 0, 0]}> 
       <MeshDistortMaterial
-        ref={matRef}
         color={'#ffffff'}
-        roughness={0.1}
-        metalness={1}
-        bumpScale={0.005}
-        clearcoat={1}
-        clearcoatRoughness={1}
         radius={1}
         distort={0.4}
       />
-      {material && <MainSphere material={material} />}
-    </>
-  )
+  </Icosahedron>
 }
 
 function SceneText() {
-  const bumpMap = useTextureLoader('/bump.jpg')
-  const envMap = useCubeTextureLoader(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], { path: '/cube/' })
-  // We use `useResource` to be able to delay rendering the spheres until the material is ready
-  const [matRef, material] = useResource()
   return (
     <>
-      <MeshDistortMaterial
-        ref={matRef}
-        color={'#ffffff'}
-        roughness={0.1}
-        metalness={1}
-        bumpScale={0.005}
-        clearcoat={1}
-        clearcoatRoughness={1}
-        radius={1}
-        distort={0.4}
-      />
       <Text
         position-z={-18}
         {...opts}
@@ -76,7 +44,7 @@ function SceneText() {
       >
         wieauchimmer
       </Text>
-      {material && <MainSphere material={material} />}
+      <MainSphere/>
     </>
   )
 }
