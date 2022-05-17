@@ -53,7 +53,7 @@ function SceneText() {
       >
         wieauchimmer
         <meshBasicMaterial
-          color="#ff0000"
+          color="#000000"
           opacity={0.5}
           transparent={true}
           blending={THREE.SubtractiveBlending}
@@ -68,7 +68,7 @@ export default function App() {
     return (
     <Canvas
       camera={{ position: [0, 0, 3] }}>
-      <color attach="background" args={['#050505']} />
+      <color attach="background" args={['#000000']} />
       {/*<fog color="#161616" attach="fog" near={8} far={30} />*/}
       <ambientLight />
       <Suspense fallback={<Html center>Loading.</Html>}>
