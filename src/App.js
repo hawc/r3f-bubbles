@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, { Suspense, useRef, useState } from 'react';
 import { extend, Canvas, useFrame, useResource } from 'react-three-fiber';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation, BrightnessContrast, ShaderPass } from 'react-postprocessing';
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, DotScreen, Pixelation, BrightnessContrast } from 'react-postprocessing';
 import { Html, Text, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from 'drei';
 import fonts from './fonts';
 
@@ -32,7 +32,7 @@ const blendShaderMaterial = new THREE.ShaderMaterial({
 	`
 });
 
-const BlendShader = new ShaderPass(blendShaderMaterial);
+const BlendShader = new THREE.ShaderPass(blendShaderMaterial);
 
 
 const text = "test text";
