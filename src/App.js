@@ -12,7 +12,6 @@ function Blend() {
 		inputBuffer: {value: null},
 		overlayBuffer: {value: null}
 	},
-
 	vertexShader: `
 		varying vec2 vUv;
 		void main() {
@@ -20,7 +19,6 @@ function Blend() {
 			gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 		}
 	`,
-
 	fragmentShader: `
 		uniform sampler2D inputBuffer;
 		uniform sampler2D overlayBuffer;
