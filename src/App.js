@@ -109,8 +109,8 @@ export default function App() {
           <Noise opacity={0.03} />
           <Vignette darkness={0.5} />*/}
           <Pixelation />
-          {/*<Blend />
-          <BrightnessContrast contrast={1} />*/}
+          <Blend />
+          {/*<BrightnessContrast contrast={1} />*/}
         </EffectComposer>
         
       </Suspense>
