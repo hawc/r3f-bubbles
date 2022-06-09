@@ -33,7 +33,7 @@ function Blend() {
   });
 
   const BlendShader = new ShaderPass(blendShaderMaterial);
-  return <primitive object={BlendShader} dispose={null} />
+  return <primitive />
 }
 
 
